@@ -16,11 +16,9 @@ class DynamicArray
 
 private:
     std::string* mArray;
-    std::string mName;
-    int mCapacity, mCounter;
+    int mCapacity;
 
 public:
-    DynamicArray* mArrayOfArrays;
 
     /*
      * Pre: this method requires nothing
