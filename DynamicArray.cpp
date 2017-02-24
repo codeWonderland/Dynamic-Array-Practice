@@ -38,8 +38,7 @@ void DynamicArray::resize(int newCapacity)
 
     this->mCapacity = newCapacity;
     this->mArray = tempArrayPtr->mArray;
-
-
+    delete tempArrayPtr;
 }
 
 int DynamicArray::getCapacity() const
