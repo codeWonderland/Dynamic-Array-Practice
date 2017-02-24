@@ -36,6 +36,7 @@ void DynamicArray::resize(int newCapacity)
 
     //delete mArray;
 
+    this->mCapacity = newCapacity;
     this->mArray = tempArrayPtr->mArray;
 
 
@@ -56,21 +57,11 @@ void DynamicArray::setArrayValue(std::string value, int location)
     DynamicArray::mArray[location] = value;
 }
 
-int DynamicArray::getCounter() const
-{
-    return mCounter;
-}
-
-void DynamicArray::setCounter(int mCounter)
-{
-    DynamicArray::mCounter = mCounter;
-}
-
 void DynamicArray::operator+=(std::string newString)
 {
     bool done = false;
 
-    if (mCounter > mCapacity)
+    if (mCapacity != 0 && mArray[mCapacity - 1] != "")
     {
         this->resize((mCapacity * 2));
     }

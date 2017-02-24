@@ -62,10 +62,6 @@ public:
      * * * * * * * * * * * * * * * * * * * * */
     void setArrayValue(std::string value, int location);
 
-    int getCounter() const;
-
-    void setCounter(int mCounter);
-
     /*
      * Pre: a dynamic array and a string
      * Purpose: adds a string to a dynamic array
