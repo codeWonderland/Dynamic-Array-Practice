@@ -1,0 +1,11 @@
+*.bin
+feature_tests.c
+feature_tests.cxx
+Makefile2
+*.marks
+TargetDirectories.txt
+*.out
+*.c
+CMakeCXXCompilerId.cpp
+*.make
+link.txt
