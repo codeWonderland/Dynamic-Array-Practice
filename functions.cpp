@@ -52,9 +52,6 @@ void mainMenu()
                 //Test to see if the file exists
                 while (noInput)
                 {
-
-                    noInput = false;
-
                     //Get File Name:
                     std::cout << std::setw(80);
                     std::cout << "What is the name of the file:";
@@ -73,6 +70,7 @@ void mainMenu()
                     else
                     {
                         std::cout << std::setw(80) << "File Opened Successfully" << std::endl << std::endl;
+                        noInput = false;
                     }
 
                 }
@@ -81,6 +79,7 @@ void mainMenu()
                 while (!inputFile.eof())
                 {
                     getline(inputFile, lines);
+                    std::cout << lines << std::endl;
                     *myArray+=lines;
                 }
                 inputFile.close();
