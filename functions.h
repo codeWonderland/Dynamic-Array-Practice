@@ -9,9 +9,7 @@
 
 /*
  * Pre: a Dynamic Array class
- * Purpose: Creates a dynamic array to fill with user modifiable
- *      dynamic arrays, then allows the user to create said modifiable
- *      arrays, then add to them from files or delete values from them
+ * Purpose: creates a dynamic array that is modifiable by a user
  * Post: returns nothing
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 void mainMenu();

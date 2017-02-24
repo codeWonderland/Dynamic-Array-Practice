@@ -4,16 +4,9 @@
 
 #include "DynamicArray.h"
 
-DynamicArray::DynamicArray(int capacity, int typeOfArray, std::string name) : mCapacity(capacity), mName(name)
+DynamicArray::DynamicArray(int capacity) : mCapacity(capacity)
 {
-    if(typeOfArray == 1)
-    {
-        mArray = new std::string[mCapacity];
-    }
-    else
-    {
-        mArrayOfArrays = new DynamicArray[mCapacity];
-    }
+    mArray = new std::string[mCapacity];
 }
 
 DynamicArray::DynamicArray(int capacity, const DynamicArray &oldDynamicArray) : mCapacity(capacity)
@@ -22,11 +15,6 @@ DynamicArray::DynamicArray(int capacity, const DynamicArray &oldDynamicArray) : 
     for(int i = 0; i < mCapacity; i++) {
         mArray[i] = oldDynamicArray.mArray[i];
     }
-}
-
-void DynamicArray::addNewDynamicArray()
-{
-    this->resize(mCapacity + 1);
 }
 
 void DynamicArray::resize(int newCapacity)
@@ -51,21 +39,6 @@ void DynamicArray::resize(int newCapacity)
     this->mArray = tempArrayPtr->mArray;
 
 
-}
-
-std::string *DynamicArray::getArray() const
-{
-    return mArray;
-}
-
-DynamicArray *DynamicArray::getArrayOfArrays() const
-{
-    return mArrayOfArrays;
-}
-
-std::string DynamicArray::getName() const
-{
-    return mName;
 }
 
 int DynamicArray::getCapacity() const

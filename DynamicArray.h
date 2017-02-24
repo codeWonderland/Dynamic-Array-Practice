@@ -25,11 +25,9 @@ public:
     /*
      * Pre: this method requires nothing
      * Purpose: This method creates a dynamic array
-     *      this array will either hold more
-     *      dynamic arrays inside of it or strings
      * Post: Creates a dynamic array
      * * * * * * * * * * * * * * * * * * * * * * * * */
-    DynamicArray(int capacity = DEFAULT_INITIAL_CAPACITY, int typeOfArray = 1, std::string name = "Array");
+    DynamicArray(int capacity = DEFAULT_INITIAL_CAPACITY);
 
     /*
      * Pre: A dynamic array and a size for a new array
@@ -38,13 +36,6 @@ public:
      *      already existing one
      * * * * * * * * * * * * * * * * * * * * * * * * * */
     DynamicArray(int capacity, const DynamicArray& oldDynamicArray);
-
-    /*
-     * Pre: A dynamic array
-     * Purpose: Add one more open spot in a dynamic array
-     * Post: returns nothing
-     * * * * * * * * * * * * * * * * * * * * * * * * * * */
-    void addNewDynamicArray();
 
     /*
      * Pre: a dynamic array and a new size for the array
@@ -60,27 +51,6 @@ public:
      * Post: Returns the size of a dynamic array
      * * * * * * * * * * * * * * * * * * * * * * * * * */
     int getCapacity() const;
-
-    /*
-     * Pre: a dynamic array
-     * Purpose: Returns a dynamic array
-     * Post: Returns a dynamic array
-     * * * * * * * * * * * * * * * * * */
-    std::string *getArray() const;
-
-    /*
-     * Pre: a dynamic array of arrays
-     * Purpose: returns a dynamic array of arrays
-     * Post: returns a dynamic array of arrays
-     * * * * * * * * * * * * * * * * * * * * * * * */
-    DynamicArray *getArrayOfArrays() const;
-
-    /*
-     * Pre: a dynamic array
-     * Purpose: returns the name of a dynamic array
-     * Post: returns the name of a dynamic array
-     * * * * * * * * * * * * * * * * * * * * * * * * */
-    std::string getName() const;
 
     /*
      * Pre: a dynamic array
