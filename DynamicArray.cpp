@@ -106,6 +106,7 @@ void DynamicArray::operator-=(std::string value)
                 {
                     mArray[i] = mArray[j];
                     foundValue = true;
+                    mArray[j] = "";
                 }
             }
 
