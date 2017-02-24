@@ -46,6 +46,11 @@ int DynamicArray::getCapacity() const
     return mCapacity;
 }
 
+std::string DynamicArray::getArrayValue(int location)
+{
+    return mArray[location];
+}
+
 void DynamicArray::setArrayValue(std::string value, int location)
 {
     DynamicArray::mArray[location] = value;
@@ -57,7 +62,7 @@ void DynamicArray::operator+=(std::string newString)
 
     if (mArray[mCapacity - 1] != "")
     {
-        this->resize((mCapacity + 1));
+        this->resize((mCapacity * 2));
     }
 
     for (int i = 0; i < mCapacity && !done; i++)

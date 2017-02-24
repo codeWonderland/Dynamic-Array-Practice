@@ -32,7 +32,81 @@ void mainMenu()
     //User chooses their array
     while(!finished)
     {
-        std::cout << myArray->getCapacity();
-        finished = true;
+        int userChoice = 0;
+        std::cout << "What would you like to do: " << std::endl;
+        std::cout << "1. Add Values From File" << std::endl;
+        std::cout << "2. Get Array Info" << std::endl;
+        std::cout << "3. Remove Values" << std::endl;
+        std::cout << "4. Quit" << std::endl;
+        std::cin >> userChoice;
+
+        std::string term, filenameIn, lines;
+        std::ifstream inputFile;
+        bool noInput;
+        switch (userChoice)
+        {
+            case 1:
+                std::cout << "What is the name of file:";
+                std::cin >> filenameIn;
+
+                //Test to see if the file exists
+                while (noInput)
+                {
+
+                    noInput = false;
+
+                    //Get File Name:
+                    std::cout << std::setw(80);
+                    std::cout << "What is the name of the file:";
+                    std::cin >> filenameIn;
+
+                    //Open File for Input
+                    inputFile.open(filenameIn);
+
+                    //In the event of failure, the while statement is triggered
+                    if (inputFile.fail())
+                    {
+                        std::cout << std::setw(80) << "Couldn't Open File!" << std::endl;
+                        noInput = true;
+                    }
+
+                    else
+                    {
+                        std::cout << std::setw(80) << "File Opened Successfully" << std::endl << std::endl;
+                    }
+
+                }
+
+                //Parsing through the file, line by line
+                while (!inputFile.eof())
+                {
+                    getline(inputFile, lines);
+                    *myArray+=lines;
+                }
+                inputFile.close();
+
+                break;
+            case 2:
+                std::cout << "This array has a size of " << myArray->getCapacity() << " and elements which are as follows:" << std::endl;
+                for(int i = 0; i < myArray->getCapacity(); i++)
+                {
+                    if(myArray->getArrayValue(i) != "")
+                    {
+                        std::cout << myArray->getArrayValue(i) << std::endl;
+                    }
+                }
+                break;
+            case 3:
+                std::cout << "What term would you like to remove? ";
+                std::cin >> term;
+                *myArray-=term;
+                break;
+            case 4:
+                std::cout << "Have a nice day!";
+                finished = true;
+                break;
+            default:
+                break;
+        }
     }
 }

@@ -6,6 +6,9 @@
 #define PA2_FUNCTIONS_H
 
 #include "DynamicArray.h"
+#include <iostream>
+#include <iomanip>
+#include <fstream>
 
 /*
  * Pre: a Dynamic Array class

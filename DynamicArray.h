@@ -52,6 +52,8 @@ public:
      * * * * * * * * * * * * * * * * * * * * * * * * * */
     int getCapacity() const;
 
+    std::string getArrayValue(int location);
+
     /*
      * Pre: a dynamic array
      * Purpose: to set a specific value in a
