@@ -42,6 +42,7 @@ void mainMenu()
 
         std::string term, filenameIn, lines;
         std::ifstream inputFile;
+        int counter = 0;
         bool noInput = true;
         switch (userChoice)
         {
@@ -49,7 +50,8 @@ void mainMenu()
                 //Test to see if the file exists
                 while (noInput)
                 {
-
+                    counter = 0;
+                    myArray->setCounter(counter);
                     noInput = false;
 
                     //Get File Name:
@@ -77,7 +79,8 @@ void mainMenu()
                 while (!inputFile.eof())
                 {
                     getline(inputFile, lines);
-                    *myArray+=lines;
+                    myArray->setCounter(++counter);
+                    *myArray+=(lines);
                 }
                 inputFile.close();
 

@@ -56,11 +56,21 @@ void DynamicArray::setArrayValue(std::string value, int location)
     DynamicArray::mArray[location] = value;
 }
 
+int DynamicArray::getCounter() const
+{
+    return mCounter;
+}
+
+void DynamicArray::setCounter(int mCounter)
+{
+    DynamicArray::mCounter = mCounter;
+}
+
 void DynamicArray::operator+=(std::string newString)
 {
     bool done = false;
 
-    if (mArray[mCapacity - 1] != "")
+    if (mCounter > mCapacity)
     {
         this->resize((mCapacity * 2));
     }

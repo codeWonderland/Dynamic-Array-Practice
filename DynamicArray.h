@@ -17,7 +17,7 @@ class DynamicArray
 private:
     std::string* mArray;
     std::string mName;
-    int mCapacity;
+    int mCapacity, mCounter;
 
 public:
     DynamicArray* mArrayOfArrays;
@@ -61,6 +61,10 @@ public:
      * Post: returns nothing
      * * * * * * * * * * * * * * * * * * * * */
     void setArrayValue(std::string value, int location);
+
+    int getCounter() const;
+
+    void setCounter(int mCounter);
 
     /*
      * Pre: a dynamic array and a string
