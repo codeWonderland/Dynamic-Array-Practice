@@ -36,7 +36,14 @@ void DynamicArray::resize(int newCapacity)
     tempArrayPtr = new DynamicArray(newCapacity);
 
     for(int i = 0; i < newCapacity; i++) {
-        tempArrayPtr->setArrayValue(mArray[i], i);
+        if(mArray != NULL)
+        {
+            tempArrayPtr->setArrayValue(mArray[i], i);
+        }
+        else{
+            tempArrayPtr->setArrayValue("", i);
+        }
+
     }
 
     delete mArray;
