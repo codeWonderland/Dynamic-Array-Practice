@@ -42,18 +42,17 @@ void mainMenu()
 
         std::string term, filenameIn, lines;
         std::ifstream inputFile;
-        bool noInput;
+        bool noInput = true;
         switch (userChoice)
         {
             case 1:
-                std::cout << "What is the name of file:";
-                std::cin >> filenameIn;
-
                 //Test to see if the file exists
                 while (noInput)
                 {
+
+                    noInput = false;
+
                     //Get File Name:
-                    std::cout << std::setw(80);
                     std::cout << "What is the name of the file:";
                     std::cin >> filenameIn;
 
@@ -63,14 +62,13 @@ void mainMenu()
                     //In the event of failure, the while statement is triggered
                     if (inputFile.fail())
                     {
-                        std::cout << std::setw(80) << "Couldn't Open File!" << std::endl;
+                        std::cout << "Couldn't Open File!" << std::endl;
                         noInput = true;
                     }
 
                     else
                     {
-                        std::cout << std::setw(80) << "File Opened Successfully" << std::endl << std::endl;
-                        noInput = false;
+                        std::cout << "File Opened Successfully" << std::endl << std::endl;
                     }
 
                 }
@@ -79,7 +77,6 @@ void mainMenu()
                 while (!inputFile.eof())
                 {
                     getline(inputFile, lines);
-                    std::cout << lines << std::endl;
                     *myArray+=lines;
                 }
                 inputFile.close();

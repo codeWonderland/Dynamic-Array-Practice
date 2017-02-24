@@ -34,7 +34,7 @@ void DynamicArray::resize(int newCapacity)
 
     }
 
-    delete mArray;
+    //delete mArray;
 
     this->mArray = tempArrayPtr->mArray;
 
